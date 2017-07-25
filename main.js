@@ -67,7 +67,7 @@ if (player == "paper" && computer == "paper") {
 }
 if (player == "paper" && computer == "scissors") {
   answer.innerHTML = "You Lose!";
-  v
+  loss = loss + 1;
 }
 if (player == "scissors" && computer == "rock") {
   answer.innerHTML = "You Lose!";

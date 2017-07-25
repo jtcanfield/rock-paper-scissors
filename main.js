@@ -11,7 +11,7 @@ $(document).ready(function(){
   let computerscissors = 0;
   let list = [];
 $(".Playgame").click(function() {
-console.log(list);
+//console.log(list);
 function countInArray(array, what) {
     let count = 0;
     for (let i = 0; i < array.length; i++) {
@@ -25,12 +25,14 @@ let listr = countInArray(list, "rock");
 let listp = countInArray(list, "paper");
 let lists = countInArray(list, "scissors");
 
-console.log(listr);
 //CANNOT USE === ON NUMBERS
 let me = "";
 let computer = "";
 // let pick = (Math.floor(Math.random() *3 ));
 let pick = Math.random();
+let pickr = (Math.random() * ((0.34-0)+0) + 0);
+let pickp = (Math.random() * ((0.67-0.34)+0) + 0.34);
+let picks = (Math.random() * ((1-0.67)+0) + 0.67);
 let computeranswer = document.getElementById("computeranswer");
 let playeru = document.getElementById("player").value;
 let player = playeru.toLowerCase(); //Forces playeru to be lowercase

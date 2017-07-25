@@ -12,12 +12,15 @@ var computeranswer = document.getElementById("computeranswer");
 if (pick == "0") {
   computer = "rock";
   computeranswer.innerHTML= "rock";
+  document.getElementById("computerpicture").style.backgroundImage = "url('img/rock.png')";
 } else if (pick == "1") {
 	computer = "paper";
 	computeranswer.innerHTML= "paper";
+  document.getElementById("computerpicture").style.backgroundImage = "url('img/paper.png')";
 } else if (pick == "2") {
   computer = "scissors";
 	computeranswer.innerHTML= "scissors";
+  document.getElementById("computerpicture").style.backgroundImage = "url('img/scissors.png')";
 }
 var playeru = document.getElementById("player").value;
 var player = playeru.toLowerCase(); //Forces playeru to be lowercase

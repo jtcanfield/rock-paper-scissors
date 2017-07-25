@@ -21,6 +21,10 @@ function countInArray(array, what) {
     return count;
 }
 let total = list.length
+if (list.length >= 20){
+  list.shift(0);
+}
+console.log(list);
 //IMPORTANT = MAKE LIST HOLD NO MORE THAN 20 PARTS OF THE ARRAY AT ONE TIME
 let listr = countInArray(list, "rock");
 let listp = countInArray(list, "paper");
@@ -43,11 +47,6 @@ if (forcepaper >0.9){
   return pick
 }}
 
-/*
-let pickr = (Math.random() * ((0.34-0)+0) + 0);
-let pickp = (Math.random() * ((0.67-0.34)+0) + 0.34);
-let picks = (Math.random() * ((1-0.67)+0) + 0.67);
-*/
 
 //CANNOT USE === ON NUMBERS
 let me = "";
@@ -105,10 +104,6 @@ if (picked <=0.34) {
   document.getElementById("computerpicture").style.backgroundImage = "url('img/scissors.png')";
   computerscissors = computerscissors + 1;
 }}
-
-//if (listr = 5){
-  computer = "paper";
-//}
 
 document.getElementById("answer");
 if (player == "rock" && computer == "rock") {

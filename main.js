@@ -11,7 +11,6 @@ $(document).ready(function(){
   let computerscissors = 0;
   let list = [];
 $(".Playgame").click(function() {
-//console.log(list);
 function countInArray(array, what) {
     let count = 0;
     for (let i = 0; i < array.length; i++) {
@@ -29,7 +28,6 @@ let lists = countInArray(list, "scissors");
 let forcepaper = (listr/total);
 let forcescissors = (listp/total);
 let forcesrock = (lists/total);
-console.log(forcepaper);
 function activatepick(){
 if (forcepaper >0.9){
   let pick = (Math.random() * ((0.67-0.34)+0) + 0.34);

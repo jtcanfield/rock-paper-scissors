@@ -3,9 +3,11 @@ $(document).ready(function(){
   let win = 0;
   let loss = 0;
   let tie = 0;
+  let list = [];
 $(".Playgame").click(function() {
 let me = "";
 let computer = "";
+console.log(list);
 //CANNOT USE === ON NUMBERS
 let pick = (Math.floor(Math.random() *3 ));
 let computeranswer = document.getElementById("computeranswer");
@@ -19,6 +21,7 @@ switch (player) {
         turns = turns + 1;
         document.getElementById("playerpicture").style.backgroundImage = "url('img/rock.png')";
         makecomputergo();
+        list.push("rock");
         break;
     case "paper":
 			  me = "paper";
@@ -26,6 +29,7 @@ switch (player) {
         turns = turns + 1;
         document.getElementById("playerpicture").style.backgroundImage = "url('img/paper.png')";
         makecomputergo();
+        list.push("paper");
         break;
     case "scissors":
 			  me = "scissors";
@@ -33,6 +37,7 @@ switch (player) {
         turns = turns + 1;
         document.getElementById("playerpicture").style.backgroundImage = "url('img/scissors.png')";
         makecomputergo();
+        list.push("scissors");
         break;
     default:
         youpicked.innerHTML= "Please type either rock, paper, or scissors into the box!";
@@ -96,6 +101,7 @@ document.getElementById("losses");
 losses.innerHTML= loss;
 document.getElementById("ties");
 ties.innerHTML= tie;
+
 });
 });
 $(document).ready(main);

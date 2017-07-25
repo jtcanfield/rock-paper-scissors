@@ -30,14 +30,20 @@ let forcepaper = (listr/total);
 let forcescissors = (listp/total);
 let forcesrock = (lists/total);
 console.log(forcepaper);
-let pick = Math.random();
+function activatepick(){
 if (forcepaper >0.9){
-  let pick = (Math.random() * ((0.34-0)+0) + 0);
-} else if (forcescissors >0.9){
   let pick = (Math.random() * ((0.67-0.34)+0) + 0.34);
-} else if (forcesrock >0.9){
+  return pick
+} else if (forcescissors >0.9){
   let pick = (Math.random() * ((1-0.67)+0) + 0.67);
-}
+  return pick
+} else if (forcesrock >0.9){
+  let pick = (Math.random() * ((0.34-0)+0) + 0);
+  return pick
+} else {
+  let pick = Math.random();
+  return pick
+}}
 
 /*
 let pickr = (Math.random() * ((0.34-0)+0) + 0);
@@ -84,12 +90,13 @@ switch (player) {
         youpicked.innerHTML= "Please type either rock, paper, or scissors into the box!";
 }
 function makecomputergo(){
-if (pick <=0.34) {
+  let picked = activatepick();
+if (picked <=0.34) {
   computer = "rock";
   computeranswer.innerHTML= "rock";
   document.getElementById("computerpicture").style.backgroundImage = "url('img/rock.png')";
   computerrock = computerrock + 1;
-} else if (pick <=0.67) {
+} else if (picked <=0.67) {
 	computer = "paper";
 	computeranswer.innerHTML= "paper";
   document.getElementById("computerpicture").style.backgroundImage = "url('img/paper.png')";

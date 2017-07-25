@@ -4,7 +4,6 @@ $(document).ready(function(){
   var loss = 0;
   var tie = 0;
 $(".Playgame").click(function() {
-console.log(turns);
 let me = "";
 let computer = "";
 let pick = (Math.floor(Math.random() *3 ));

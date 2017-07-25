@@ -10,6 +10,8 @@ $(document).ready(function(){
   let computerpaper = 0;
   let computerscissors = 0;
   let list = [];
+  let computer = "";
+  let me = "";
 $(".Playgame").click(function() {
 function countInArray(array, what) {
     let count = 0;
@@ -47,8 +49,6 @@ if (forcepaper >0.9){
   return pick
 }}
 //CANNOT USE === ON NUMBERS
-let me = "";
-let computer = "";
 let computeranswer = document.getElementById("computeranswer");
 let playeru = document.getElementById("player").value;
 let player = playeru.toLowerCase();

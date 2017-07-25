@@ -18,22 +18,26 @@ switch (player) {
         youpicked.innerHTML= "rock";
         turns = turns + 1;
         document.getElementById("playerpicture").style.backgroundImage = "url('img/rock.png')";
+        makecomputergo();
         break;
     case "paper":
 			  me = "paper";
         youpicked.innerHTML= "paper";
         turns = turns + 1;
         document.getElementById("playerpicture").style.backgroundImage = "url('img/paper.png')";
+        makecomputergo();
         break;
     case "scissors":
 			  me = "scissors";
         youpicked.innerHTML= "scissors";
         turns = turns + 1;
         document.getElementById("playerpicture").style.backgroundImage = "url('img/scissors.png')";
+        makecomputergo();
         break;
     default:
         youpicked.innerHTML= "Please type either rock, paper, or scissors into the box!";
 }
+function makecomputergo(){
 if (pick == "0") {
   computer = "rock";
   computeranswer.innerHTML= "rock";
@@ -46,7 +50,7 @@ if (pick == "0") {
   computer = "scissors";
 	computeranswer.innerHTML= "scissors";
   document.getElementById("computerpicture").style.backgroundImage = "url('img/scissors.png')";
-}
+}}
 document.getElementById("answer");
 if (player == "rock" && computer == "rock") {
   answer.innerHTML = "Tie!";

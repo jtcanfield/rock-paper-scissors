@@ -47,36 +47,48 @@ switch (player) {
 document.getElementById("answer");
 if (player == "rock" && computer == "rock") {
   answer.innerHTML = "Tie!";
+  tie = tie + 1;
 }
 if (player == "rock" && computer == "paper") {
   answer.innerHTML = "You Lose!";
+  loss = loss + 1;
 }
 if (player == "rock" && computer == "scissors") {
   answer.innerHTML = "You Win!";
+  win = win + 1;
 }
 if (player == "paper" && computer == "rock") {
   answer.innerHTML = "You Win!";
+  win = win + 1;
 }
 if (player == "paper" && computer == "paper") {
   answer.innerHTML = "Tie!";
+  tie = tie + 1;
 }
 if (player == "paper" && computer == "scissors") {
   answer.innerHTML = "You Lose!";
+  v
 }
 if (player == "scissors" && computer == "rock") {
   answer.innerHTML = "You Lose!";
+  loss = loss + 1;
 }
 if (player == "scissors" && computer == "paper") {
   answer.innerHTML = "You Win!";
+  win = win + 1;
 }
 if (player == "scissors" && computer == "scissors") {
   answer.innerHTML = "Tie!";
+  tie = tie + 1;
 }
 document.getElementById("plays");
 plays.innerHTML= turns;
 document.getElementById("wins");
+wins.innerHTML= win;
 document.getElementById("losses");
+losses.innerHTML= loss;
 document.getElementById("ties");
+ties.innerHTML= tie;
 });
 });
 $(document).ready(main);

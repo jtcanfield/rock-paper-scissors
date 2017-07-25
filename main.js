@@ -36,6 +36,9 @@ switch (player) {
     default:
         youpicked.innerHTML= "Please type either rock, paper, or scissors into the box!";
 }
+document.getElementById("wins");
+document.getElementById("losses");
+document.getElementById("ties");
 document.getElementById("answer");
 if (player == "rock" && computer == "rock") {
   answer.innerHTML = "Tie!";

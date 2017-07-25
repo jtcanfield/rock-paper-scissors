@@ -1,6 +1,6 @@
 
 $(document).ready(function(){
-$(".submitorder").click(function() {
+$(".Playgame").click(function() {
 let me = "";
 let computer = "";
 let pick = (Math.floor(Math.random() *3 ));
@@ -34,7 +34,7 @@ switch (player) {
         youpicked.innerHTML= "scissors";
         break;
     default:
-        youpicked.innerHTML= "Please enter a correct type";
+        youpicked.innerHTML= "Please type either rock, paper, or scissors into the box!";
 }
 document.getElementById("answer");
 if (player == "rock" && computer == "rock") {

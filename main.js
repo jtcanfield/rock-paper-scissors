@@ -16,7 +16,10 @@ if (pick == "0") {
 if (me === "rock") {
   console.log(me + ", Computer Wins!");
 } else if (me === "paper") {
- console.log(me + ", Looks like a Tie!");
+  console.log(me + ", Looks like a Tie!");
 } else if (me === "scissors") {
-   console.log(me + ", I Win!");
+  console.log(me + ", I Win!");
 }
+
+// response = readline();
+// console.log(response);

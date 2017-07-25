@@ -5,10 +5,23 @@ $(document).ready(function(){
   let tie = 0;
   let list = [];
 $(".Playgame").click(function() {
+console.log(list);
+function countInArray(array, what) {
+    let count = 0;
+    for (let i = 0; i < array.length; i++) {
+        if (array[i] === what) {
+            count++;
+        }
+    }
+    return count;
+}
+let listr = countInArray(list, "rock");
+let listp = countInArray(list, "paper");
+let lists = countInArray(list, "scissors");
+console.log(listr);
+//CANNOT USE === ON NUMBERS
 let me = "";
 let computer = "";
-console.log(list);
-//CANNOT USE === ON NUMBERS
 let pick = (Math.floor(Math.random() *3 ));
 let computeranswer = document.getElementById("computeranswer");
 let playeru = document.getElementById("player").value;
@@ -104,4 +117,4 @@ ties.innerHTML= tie;
 
 });
 });
-$(document).ready(main);
+//$(document).ready(main);

@@ -46,8 +46,6 @@ if (forcepaper >0.9){
   let pick = Math.random();
   return pick
 }}
-
-
 //CANNOT USE === ON NUMBERS
 let me = "";
 let computer = "";
@@ -164,4 +162,3 @@ document.getElementById("cscissors");
 cscissors.innerHTML= computerscissors;
 });
 });
-//$(document).ready(main);

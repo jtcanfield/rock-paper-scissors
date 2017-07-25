@@ -20,6 +20,3 @@ if (me === "rock") {
 } else if (me === "scissors") {
   console.log(me + ", I Win!");
 }
-
-// response = readline();
-// console.log(response);

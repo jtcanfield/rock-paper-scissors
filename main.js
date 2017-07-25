@@ -3,7 +3,7 @@ $(document).ready(function(){
 $(".submitorder").click(function() {
 let me = "";
 let computer = "";
-let pick = (Math.floor(Math.random() *2 ));
+let pick = (Math.floor(Math.random() *3 ));
 console.log(pick);
 //CANNOT USE === ON NUMBERS
 var computeranswer = document.getElementById("computeranswer");
@@ -35,7 +35,13 @@ switch (player) {
     default:
         youpicked.innerHTML= "Please enter a correct type";
 }
-console.log(computer);
+var answer = document.getElementById("answer");
+if (player == "rock" && computer == "scissors") {
+  answer.innerHTML = "You Win";
+}
+
+
+
 });
 });
 $(document).ready(main);

@@ -28,17 +28,19 @@ switch (player) {
 			  me = "rock";
         youpicked.innerHTML= "rock";
         turns = turns + 1;
-        document.getElementById("playerpicture").style.backgroundImage = "url('img_tree.png')";
+        document.getElementById("playerpicture").style.backgroundImage = "url('img/rock.png')";
         break;
     case "paper":
 			  me = "paper";
         youpicked.innerHTML= "paper";
         turns = turns + 1;
+        document.getElementById("playerpicture").style.backgroundImage = "url('img/paper.png')";
         break;
     case "scissors":
 			  me = "scissors";
         youpicked.innerHTML= "scissors";
         turns = turns + 1;
+        document.getElementById("playerpicture").style.backgroundImage = "url('img/scissors.png')";
         break;
     default:
         youpicked.innerHTML= "Please type either rock, paper, or scissors into the box!";

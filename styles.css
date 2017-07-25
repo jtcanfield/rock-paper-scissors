@@ -2,8 +2,16 @@ html{
   text-align: center;
 }
 #playerpicture{
-
+  width: 50px;
+  height: 50px;
+  display: inline-block;
+  background-size: cover;
+  background-image: url('');
 }
 #computerpicture{
-
+  width: 50px;
+  height: 50px;
+  display: inline-block;
+  background-size: cover;
+  background-image: url('');
 }

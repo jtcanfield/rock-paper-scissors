@@ -35,13 +35,34 @@ switch (player) {
     default:
         youpicked.innerHTML= "Please enter a correct type";
 }
-var answer = document.getElementById("answer");
-if (player == "rock" && computer == "scissors") {
-  answer.innerHTML = "You Win";
+document.getElementById("answer");
+if (player == "rock" && computer == "rock") {
+  answer.innerHTML = "Tie!";
 }
-
-
-
+if (player == "rock" && computer == "paper") {
+  answer.innerHTML = "You Lose!";
+}
+if (player == "rock" && computer == "scissors") {
+  answer.innerHTML = "You Win!";
+}
+if (player == "paper" && computer == "rock") {
+  answer.innerHTML = "You Win!";
+}
+if (player == "paper" && computer == "paper") {
+  answer.innerHTML = "Tie!";
+}
+if (player == "paper" && computer == "scissors") {
+  answer.innerHTML = "You Lose!";
+}
+if (player == "scissors" && computer == "rock") {
+  answer.innerHTML = "You Lose!";
+}
+if (player == "scissors" && computer == "paper") {
+  answer.innerHTML = "You Win!";
+}
+if (player == "scissors" && computer == "scissors") {
+  answer.innerHTML = "Tie!";
+}
 });
 });
 $(document).ready(main);

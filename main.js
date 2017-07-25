@@ -24,6 +24,7 @@ function countInArray(array, what) {
 let listr = countInArray(list, "rock");
 let listp = countInArray(list, "paper");
 let lists = countInArray(list, "scissors");
+
 console.log(listr);
 //CANNOT USE === ON NUMBERS
 let me = "";
@@ -66,7 +67,7 @@ switch (player) {
         youpicked.innerHTML= "Please type either rock, paper, or scissors into the box!";
 }
 function makecomputergo(){
-if (pick <0.34) {
+if (pick <=0.34) {
   computer = "rock";
   computeranswer.innerHTML= "rock";
   document.getElementById("computerpicture").style.backgroundImage = "url('img/rock.png')";
@@ -82,6 +83,11 @@ if (pick <0.34) {
   document.getElementById("computerpicture").style.backgroundImage = "url('img/scissors.png')";
   computerscissors = computerscissors + 1;
 }}
+/*
+if (listr = 5){
+  computer = "paper";
+}
+*/
 document.getElementById("answer");
 if (player == "rock" && computer == "rock") {
   answer.innerHTML = "Tie!";

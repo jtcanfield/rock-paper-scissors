@@ -21,18 +21,32 @@ function countInArray(array, what) {
     }
     return count;
 }
+let total = list.length
 let listr = countInArray(list, "rock");
 let listp = countInArray(list, "paper");
 let lists = countInArray(list, "scissors");
+let forcepaper = (listr/total);
+let forcescissors = (listp/total);
+let forcesrock = (lists/total);
+console.log(forcepaper);
+let pick = Math.random();
+if (forcepaper >0.9){
+  let pick = (Math.random() * ((0.34-0)+0) + 0);
+} else if (forcescissors >0.9){
+  let pick = (Math.random() * ((0.67-0.34)+0) + 0.34);
+} else if (forcesrock >0.9){
+  let pick = (Math.random() * ((1-0.67)+0) + 0.67);
+}
+
+/*
+let pickr = (Math.random() * ((0.34-0)+0) + 0);
+let pickp = (Math.random() * ((0.67-0.34)+0) + 0.34);
+let picks = (Math.random() * ((1-0.67)+0) + 0.67);
+*/
 
 //CANNOT USE === ON NUMBERS
 let me = "";
 let computer = "";
-// let pick = (Math.floor(Math.random() *3 ));
-let pick = Math.random();
-let pickr = (Math.random() * ((0.34-0)+0) + 0);
-let pickp = (Math.random() * ((0.67-0.34)+0) + 0.34);
-let picks = (Math.random() * ((1-0.67)+0) + 0.67);
 let computeranswer = document.getElementById("computeranswer");
 let playeru = document.getElementById("player").value;
 let player = playeru.toLowerCase(); //Forces playeru to be lowercase
@@ -85,11 +99,11 @@ if (pick <=0.34) {
   document.getElementById("computerpicture").style.backgroundImage = "url('img/scissors.png')";
   computerscissors = computerscissors + 1;
 }}
-/*
-if (listr = 5){
+
+//if (listr = 5){
   computer = "paper";
-}
-*/
+//}
+
 document.getElementById("answer");
 if (player == "rock" && computer == "rock") {
   answer.innerHTML = "Tie!";

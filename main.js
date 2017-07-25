@@ -23,9 +23,9 @@ function countInArray(array, what) {
 let total = list.length
 if (list.length >= 20){
   list.shift(0);
+  //CHECK OUT .SHIFT(), .UPSHIFT(), .POP(), .SLICE()
 }
 console.log(list);
-//IMPORTANT = MAKE LIST HOLD NO MORE THAN 20 PARTS OF THE ARRAY AT ONE TIME
 let listr = countInArray(list, "rock");
 let listp = countInArray(list, "paper");
 let lists = countInArray(list, "scissors");

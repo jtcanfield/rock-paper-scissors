@@ -12,7 +12,18 @@ $(document).ready(function(){
   let list = [];
   let computer = "";
   let me = "";
-$(".Playgame").click(function() {
+$(".RockButton").click(function() {
+  startgame("rock");
+});
+$(".PaperButton").click(function() {
+  startgame("paper");
+});
+$(".ScissorsButton").click(function() {
+  startgame("scissors");
+});
+// $(".Playgame").click(function() {
+function startgame(player){
+  console.log(player);
 function countInArray(array, what) {
     let count = 0;
     for (let i = 0; i < array.length; i++) {
@@ -50,8 +61,9 @@ if (forcepaper >0.9){
 }}
 //CANNOT USE === ON NUMBERS
 let computeranswer = document.getElementById("computeranswer");
-let playeru = document.getElementById("player").value;
-let player = playeru.toLowerCase();
+/* If you wanted to use text:
+let playeru = document.getElementById("playertext").value;
+let player = playeru.toLowerCase();*/
 document.getElementById("youpicked");
 switch (player) {
     case "rock":
@@ -160,5 +172,5 @@ document.getElementById("cpapers");
 cpapers.innerHTML= computerpaper;
 document.getElementById("cscissors");
 cscissors.innerHTML= computerscissors;
-});
+};
 });

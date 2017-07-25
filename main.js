@@ -1,10 +1,15 @@
 
 $(document).ready(function(){
+  var turns = 0;
+  var win = 0;
+  var loss = 0;
+  var tie = 0;
 $(".Playgame").click(function() {
+console.log(turns);
 let me = "";
 let computer = "";
 let pick = (Math.floor(Math.random() *3 ));
-console.log(pick);
+//console.log(pick);
 //CANNOT USE === ON NUMBERS
 var computeranswer = document.getElementById("computeranswer");
 if (pick == "0") {
@@ -24,21 +29,21 @@ switch (player) {
     case "rock":
 			  me = "rock";
         youpicked.innerHTML= "rock";
+        turns = turns + 1;
         break;
     case "paper":
 			  me = "paper";
         youpicked.innerHTML= "paper";
+        turns = turns + 1;
         break;
     case "scissors":
 			  me = "scissors";
         youpicked.innerHTML= "scissors";
+        turns = turns + 1;
         break;
     default:
         youpicked.innerHTML= "Please type either rock, paper, or scissors into the box!";
 }
-document.getElementById("wins");
-document.getElementById("losses");
-document.getElementById("ties");
 document.getElementById("answer");
 if (player == "rock" && computer == "rock") {
   answer.innerHTML = "Tie!";
@@ -67,6 +72,11 @@ if (player == "scissors" && computer == "paper") {
 if (player == "scissors" && computer == "scissors") {
   answer.innerHTML = "Tie!";
 }
+document.getElementById("plays");
+plays.innerHTML= turns;
+document.getElementById("wins");
+document.getElementById("losses");
+document.getElementById("ties");
 });
 });
 $(document).ready(main);

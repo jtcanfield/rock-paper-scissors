@@ -28,6 +28,7 @@ switch (player) {
 			  me = "rock";
         youpicked.innerHTML= "rock";
         turns = turns + 1;
+        document.getElementById("playerpicture").style.backgroundImage = "url('img_tree.png')";
         break;
     case "paper":
 			  me = "paper";

@@ -1,16 +1,16 @@
 $(document).ready(function(){
-  var turns = 0;
-  var win = 0;
-  var loss = 0;
-  var tie = 0;
+  let turns = 0;
+  let win = 0;
+  let loss = 0;
+  let tie = 0;
 $(".Playgame").click(function() {
 let me = "";
 let computer = "";
 //CANNOT USE === ON NUMBERS
 let pick = (Math.floor(Math.random() *3 ));
-var computeranswer = document.getElementById("computeranswer");
-var playeru = document.getElementById("player").value;
-var player = playeru.toLowerCase(); //Forces playeru to be lowercase
+let computeranswer = document.getElementById("computeranswer");
+let playeru = document.getElementById("player").value;
+let player = playeru.toLowerCase(); //Forces playeru to be lowercase
 document.getElementById("youpicked");
 switch (player) {
     case "rock":

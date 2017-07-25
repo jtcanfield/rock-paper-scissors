@@ -17,7 +17,8 @@ if (pick == "0") {
   computer = "scissors";
 	computeranswer.innerHTML= "scissors";
 }
-var player = document.getElementById("player").value;
+var playeru = document.getElementById("player").value;
+var player = playeru.toLowerCase(); //Forces playeru to be lowercase
 document.getElementById("youpicked");
 switch (player) {
     case "rock":

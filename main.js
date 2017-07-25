@@ -22,6 +22,7 @@ function countInArray(array, what) {
     return count;
 }
 let total = list.length
+//IMPORTANT = MAKE LIST HOLD NO MORE THAN 20 PARTS OF THE ARRAY AT ONE TIME
 let listr = countInArray(list, "rock");
 let listp = countInArray(list, "paper");
 let lists = countInArray(list, "scissors");

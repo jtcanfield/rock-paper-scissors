@@ -51,7 +51,7 @@ let me = "";
 let computer = "";
 let computeranswer = document.getElementById("computeranswer");
 let playeru = document.getElementById("player").value;
-let player = playeru.toLowerCase(); //Forces playeru to be lowercase
+let player = playeru.toLowerCase();
 document.getElementById("youpicked");
 switch (player) {
     case "rock":

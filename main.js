@@ -6,19 +6,17 @@ console.log(pick);
 //CANNOT USE === ON NUMBERS
 
 if (pick == "0") {
-  me = "rock";
+  me = "Rock";
 } else if (pick == "1") {
-	me = "paper";
+	me = "Paper";
 } else if (pick == "2") {
-  me = "scissors";
+  me = "Scissors";
 }
 
-console.log(me);
-
 if (me === "rock") {
-  console.log("Computer Wins!");
+  console.log(me + ", Computer Wins!");
 } else if (me === "paper") {
- console.log("Looks like a Tie!");
+ console.log(me + ", Looks like a Tie!");
 } else if (me === "scissors") {
-   console.log("I Win!");
+   console.log(me + ", I Win!");
 }

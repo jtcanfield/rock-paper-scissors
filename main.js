@@ -1,4 +1,3 @@
-
 $(document).ready(function(){
   var turns = 0;
   var win = 0;
@@ -9,7 +8,6 @@ console.log(turns);
 let me = "";
 let computer = "";
 let pick = (Math.floor(Math.random() *3 ));
-//console.log(pick);
 //CANNOT USE === ON NUMBERS
 var computeranswer = document.getElementById("computeranswer");
 if (pick == "0") {

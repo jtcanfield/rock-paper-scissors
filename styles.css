@@ -1,10 +1,18 @@
 html {
   text-align: center;
 }
-body {
+
+/*#bodybackground {
   background-image: url('img/RockPaperScissorsBackground.png');
   background-size: cover;
+  filter: blur(50px);
+  position: absolute;
+  width: 100%;
+  height: 100%;
 }
+body{
+}*/
+
 .RockButton, .PaperButton, .ScissorsButton, #playerpicture, #computerpicture{
   width: 50px;
   height: 50px;

@@ -147,6 +147,7 @@ cpaperspercentage.innerHTML= Math.round(computerpaper/turns*100);
 cscissors.innerHTML= computerscissors;
 cscissorspercentage.innerHTML= Math.round(computerscissors/turns*100);
 };
+/*
 window.requestAnimationFrame = window.requestAnimationFrame
  || window.mozRequestAnimationFrame
  || window.webkitRequestAnimationFrame
@@ -162,4 +163,5 @@ function parallaxeffect(){
 window.addEventListener('scroll', function(){ // on page scroll
   requestAnimationFrame(parallaxeffect) // call parallaxeffect() every screen paint
 }, false)
+*/
 });

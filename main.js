@@ -71,7 +71,7 @@ document.getElementById("youpicked");
 switch (player) {
     case "rock":
 			  me = "rock";
-        youpicked.innerHTML= "rock";
+        youpicked.innerHTML= "Rock";
         turns = turns + 1;
         document.getElementById("playerpicture").style.backgroundImage = "url('img/rock.png')";
         makecomputergo();
@@ -80,7 +80,7 @@ switch (player) {
         break;
     case "paper":
 			  me = "paper";
-        youpicked.innerHTML= "paper";
+        youpicked.innerHTML= "Paper";
         turns = turns + 1;
         document.getElementById("playerpicture").style.backgroundImage = "url('img/paper.png')";
         makecomputergo();
@@ -89,7 +89,7 @@ switch (player) {
         break;
     case "scissors":
 			  me = "scissors";
-        youpicked.innerHTML= "scissors";
+        youpicked.innerHTML= "Scissors";
         turns = turns + 1;
         document.getElementById("playerpicture").style.backgroundImage = "url('img/scissors.png')";
         makecomputergo();
@@ -103,17 +103,17 @@ function makecomputergo(){
 let picked = activatepick();
   if (picked <=0.34) {
     computer = "rock";
-    computeranswer.innerHTML= "rock";
+    computeranswer.innerHTML= "Rock";
     document.getElementById("computerpicture").style.backgroundImage = "url('img/rock.png')";
     computerrock = computerrock + 1;
   } else if (picked <=0.67) {
   	computer = "paper";
-  	computeranswer.innerHTML= "paper";
+  	computeranswer.innerHTML= "Paper";
     document.getElementById("computerpicture").style.backgroundImage = "url('img/paper.png')";
     computerpaper = computerpaper + 1;
   } else {
     computer = "scissors";
-  	computeranswer.innerHTML= "scissors";
+  	computeranswer.innerHTML= "Scissors";
     document.getElementById("computerpicture").style.backgroundImage = "url('img/scissors.png')";
     computerscissors = computerscissors + 1;
   }

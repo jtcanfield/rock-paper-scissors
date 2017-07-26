@@ -1,4 +1,6 @@
 $(document).ready(function(){
+$(".thehtmlclass").hide();
+$(".thehtmlclass").fadeIn(1000);
   let turns = 0;
   let win = 0;
   let loss = 0;

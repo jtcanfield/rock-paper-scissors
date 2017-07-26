@@ -24,6 +24,7 @@ $(".ScissorsButton").click(function() {
   startgame("scissors");
 });
 function startgame(player){
+if (list.length >= 10){ list.shift(0); }
 function countInArray(array, what) {
     let count = 0;
     for (let i = 0; i < array.length; i++) {
@@ -33,30 +34,13 @@ function countInArray(array, what) {
     }
     return count;
 }
-let total = list.length
-if (list.length >= 10){
-  list.shift(0);
-}
 let listr = countInArray(list, "rock");
 let listp = countInArray(list, "paper");
 let lists = countInArray(list, "scissors");
+let total = list.length
 let forcepaper = (listr/total);
 let forcescissors = (listp/total);
 let forcesrock = (lists/total);
-function activatepick(){
-if (forcepaper >0.7){
-  let pick = (Math.random() * ((0.67-0.34)+0) + 0.34);
-  return pick
-} else if (forcescissors >0.7){
-  let pick = (Math.random() * ((1-0.67)+0) + 0.67);
-  return pick
-} else if (forcesrock >0.7){
-  let pick = (Math.random() * ((0.34-0)+0) + 0);
-  return pick
-} else {
-  let pick = Math.random();
-  return pick
-}}
 /* You don't actually need these to do inner.HTML
 let computeranswer = document.getElementById("computeranswer");
 document.getElementById("youpicked");*/
@@ -96,22 +80,37 @@ switch (player) {
         youpicked.innerHTML= "Not sure how you did this or how you got here but good job! BUT you didn't win.";
 }
 function makecomputergo(){
-let picked = activatepick();
-  if (picked <=0.34) {
-    computer = "rock";
-    computeranswer.innerHTML= "Rock";
-    document.getElementById("computerpicture").style.backgroundImage = "url('img/rock.png')";
-    computerrock = computerrock + 1;
-  } else if (picked <=0.67) {
-  	computer = "paper";
-  	computeranswer.innerHTML= "Paper";
-    document.getElementById("computerpicture").style.backgroundImage = "url('img/paper.png')";
-    computerpaper = computerpaper + 1;
+  let picked = activatepick();
+    if (picked <=0.34) {
+      computer = "rock";
+      computeranswer.innerHTML= "Rock";
+      document.getElementById("computerpicture").style.backgroundImage = "url('img/rock.png')";
+      computerrock = computerrock + 1;
+    } else if (picked <=0.67) {
+    	computer = "paper";
+    	computeranswer.innerHTML= "Paper";
+      document.getElementById("computerpicture").style.backgroundImage = "url('img/paper.png')";
+      computerpaper = computerpaper + 1;
+    } else {
+      computer = "scissors";
+    	computeranswer.innerHTML= "Scissors";
+      document.getElementById("computerpicture").style.backgroundImage = "url('img/scissors.png')";
+      computerscissors = computerscissors + 1;
+    }
+  }
+function activatepick(){
+  if (forcepaper >0.7){
+    let pick = (Math.random() * ((0.67-0.34)+0) + 0.34);
+    return pick
+  } else if (forcescissors >0.7){
+    let pick = (Math.random() * ((1-0.67)+0) + 0.67);
+    return pick
+  } else if (forcesrock >0.7){
+    let pick = (Math.random() * ((0.34-0)+0) + 0);
+    return pick
   } else {
-    computer = "scissors";
-  	computeranswer.innerHTML= "Scissors";
-    document.getElementById("computerpicture").style.backgroundImage = "url('img/scissors.png')";
-    computerscissors = computerscissors + 1;
+    let pick = Math.random();
+    return pick
   }
 }
 if (player === computer){
@@ -146,23 +145,6 @@ cpaperspercentage.innerHTML= Math.round(computerpaper/turns*100);
 cscissors.innerHTML= computerscissors;
 cscissorspercentage.innerHTML= Math.round(computerscissors/turns*100);
 };
-/*
-window.requestAnimationFrame = window.requestAnimationFrame
- || window.mozRequestAnimationFrame
- || window.webkitRequestAnimationFrame
- || window.msRequestAnimationFrame
- || function(f){setTimeout(f, 1000/60)}
-
-var parallax1 = document.getElementById('parallax1')
-
-function parallaxeffect(){
-  var scrolltop = window.pageYOffset // get number of pixels document has scrolled vertically
-  parallax1.style.backgroundPosition = "0px " + -scrolltop * .5 + 'px'
-}
-window.addEventListener('scroll', function(){ // on page scroll
-  requestAnimationFrame(parallaxeffect) // call parallaxeffect() every screen paint
-}, false)
-*/
 });
 /* BELOW IS A SIMPLIFIED FUNCTION FOR DETERMINING WHO WINS
 function rps (player, computer) {

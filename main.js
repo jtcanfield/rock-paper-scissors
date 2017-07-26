@@ -97,7 +97,7 @@ switch (player) {
         playerscissors = playerscissors + 1;
         break;
     default:
-        youpicked.innerHTML= "Not sure how you did this or how you got here but you should probably tell me about this";
+        youpicked.innerHTML= "Not sure how you did this or how you got here but good job! BUT you didn't win.";
 }
 function makecomputergo(){
 let picked = activatepick();

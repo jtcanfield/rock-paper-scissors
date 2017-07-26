@@ -31,6 +31,10 @@ function countInArray(array, what) {
     }
     return count;
 }
+/*
+.catch(err => {
+})
+*/
 let total = list.length
 if (list.length >= 10){
   list.shift(0);

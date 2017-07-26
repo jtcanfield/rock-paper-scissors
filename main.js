@@ -115,7 +115,7 @@ let picked = activatepick();
     computerscissors = computerscissors + 1;
   }
 }
-if (player == "rock" && computer == "rock" || player == "paper" && computer == "paper" || player == "scissors" && computer == "scissors") {
+if (player === computer){
   answer.innerHTML = "Tie!";
   tie = tie + 1;
 }

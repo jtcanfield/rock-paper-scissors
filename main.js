@@ -115,41 +115,17 @@ let picked = activatepick();
     computerscissors = computerscissors + 1;
   }
 }
-if (player == "rock" && computer == "rock") {
+if (player == "rock" && computer == "rock" || player == "paper" && computer == "paper" || player == "scissors" && computer == "scissors") {
   answer.innerHTML = "Tie!";
   tie = tie + 1;
 }
-if (player == "rock" && computer == "paper") {
+if (player == "rock" && computer == "paper" || player == "paper" && computer == "scissors" || player == "scissors" && computer == "rock") {
   answer.innerHTML = "You Lose!";
   loss = loss + 1;
 }
-if (player == "rock" && computer == "scissors") {
+if (player == "rock" && computer == "scissors" || player == "paper" && computer == "rock" || player == "scissors" && computer == "paper") {
   answer.innerHTML = "You Win!";
   win = win + 1;
-}
-if (player == "paper" && computer == "rock") {
-  answer.innerHTML = "You Win!";
-  win = win + 1;
-}
-if (player == "paper" && computer == "paper") {
-  answer.innerHTML = "Tie!";
-  tie = tie + 1;
-}
-if (player == "paper" && computer == "scissors") {
-  answer.innerHTML = "You Lose!";
-  loss = loss + 1;
-}
-if (player == "scissors" && computer == "rock") {
-  answer.innerHTML = "You Lose!";
-  loss = loss + 1;
-}
-if (player == "scissors" && computer == "paper") {
-  answer.innerHTML = "You Win!";
-  win = win + 1;
-}
-if (player == "scissors" && computer == "scissors") {
-  answer.innerHTML = "Tie!";
-  tie = tie + 1;
 }
 plays.innerHTML= turns;
 wins.innerHTML= win;

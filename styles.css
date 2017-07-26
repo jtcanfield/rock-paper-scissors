@@ -3,6 +3,7 @@ html {
 }
 body {
   background-image: url('img/RockPaperScissorsBackground.png');
+  background-size: cover;
 }
 .RockButton, .PaperButton, .ScissorsButton, #playerpicture, #computerpicture{
   width: 50px;

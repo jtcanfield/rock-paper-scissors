@@ -21,7 +21,6 @@ $(".PaperButton").click(function() {
 $(".ScissorsButton").click(function() {
   startgame("scissors");
 });
-// $(".Playgame").click(function() {
 function startgame(player){
   console.log(player);
 function countInArray(array, what) {
@@ -60,8 +59,8 @@ if (forcepaper >0.8){
   let pick = Math.random();
   return pick
 }}
-//CANNOT USE === ON NUMBERS
 let computeranswer = document.getElementById("computeranswer");
+//CANNOT USE === ON NUMBERS
 /* If you wanted to use text:
 let playeru = document.getElementById("playertext").value;
 let player = playeru.toLowerCase();*/
@@ -99,23 +98,23 @@ switch (player) {
 }
 function makecomputergo(){
   let picked = activatepick();
-if (picked <=0.34) {
-  computer = "rock";
-  computeranswer.innerHTML= "rock";
-  document.getElementById("computerpicture").style.backgroundImage = "url('img/rock.png')";
-  computerrock = computerrock + 1;
-} else if (picked <=0.67) {
-	computer = "paper";
-	computeranswer.innerHTML= "paper";
-  document.getElementById("computerpicture").style.backgroundImage = "url('img/paper.png')";
-  computerpaper = computerpaper + 1;
-} else {
-  computer = "scissors";
-	computeranswer.innerHTML= "scissors";
-  document.getElementById("computerpicture").style.backgroundImage = "url('img/scissors.png')";
-  computerscissors = computerscissors + 1;
-}}
-
+  if (picked <=0.34) {
+    computer = "rock";
+    computeranswer.innerHTML= "rock";
+    document.getElementById("computerpicture").style.backgroundImage = "url('img/rock.png')";
+    computerrock = computerrock + 1;
+  } else if (picked <=0.67) {
+  	computer = "paper";
+  	computeranswer.innerHTML= "paper";
+    document.getElementById("computerpicture").style.backgroundImage = "url('img/paper.png')";
+    computerpaper = computerpaper + 1;
+  } else {
+    computer = "scissors";
+  	computeranswer.innerHTML= "scissors";
+    document.getElementById("computerpicture").style.backgroundImage = "url('img/scissors.png')";
+    computerscissors = computerscissors + 1;
+  }
+}
 document.getElementById("answer");
 if (player == "rock" && computer == "rock") {
   answer.innerHTML = "Tie!";

@@ -36,7 +36,6 @@ function countInArray(array, what) {
 let total = list.length
 if (list.length >= 10){
   list.shift(0);
-  //CHECK OUT .SHIFT(), .UPSHIFT(), .POP(), .SLICE()
 }
 let listr = countInArray(list, "rock");
 let listp = countInArray(list, "paper");
@@ -186,7 +185,6 @@ function rps (player, computer) {
     return 'Computer Wins'
   }
 }
-
 console.log(rps('rock', 'paper'));
 console.log(rps('scissors', 'paper'));
 console.log(rps('scissors', 'rock'));

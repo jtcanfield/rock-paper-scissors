@@ -1,5 +1,8 @@
-html{
+html {
   text-align: center;
+}
+body {
+
 }
 .RockButton, .PaperButton, .ScissorsButton, #playerpicture, #computerpicture{
   width: 50px;

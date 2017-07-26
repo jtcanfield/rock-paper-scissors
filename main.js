@@ -115,7 +115,6 @@ let picked = activatepick();
     computerscissors = computerscissors + 1;
   }
 }
-document.getElementById("answer");
 if (player == "rock" && computer == "rock") {
   answer.innerHTML = "Tie!";
   tie = tie + 1;
@@ -152,25 +151,18 @@ if (player == "scissors" && computer == "scissors") {
   answer.innerHTML = "Tie!";
   tie = tie + 1;
 }
-document.getElementById("plays");
 plays.innerHTML= turns;
-document.getElementById("wins");
 wins.innerHTML= win;
-document.getElementById("losses");
+winspercentage.innerHTML= Math.round(win/turns*100);
 losses.innerHTML= loss;
-document.getElementById("ties");
+lossespercentage.innerHTML= Math.round(loss/turns*100);
 ties.innerHTML= tie;
-document.getElementById("procks");
+tiespercentage.innerHTML= Math.round(tie/turns*100);
 procks.innerHTML= playerrock;
-document.getElementById("ppapers");
 ppapers.innerHTML= playerpaper;
-document.getElementById("pscissors");
 pscissors.innerHTML= playerscissors;
-document.getElementById("crocks");
 crocks.innerHTML= computerrock;
-document.getElementById("cpapers");
 cpapers.innerHTML= computerpaper;
-document.getElementById("cscissors");
 cscissors.innerHTML= computerscissors;
 };
 });

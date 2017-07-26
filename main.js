@@ -94,10 +94,10 @@ switch (player) {
         playerscissors = playerscissors + 1;
         break;
     default:
-        youpicked.innerHTML= "Please type either rock, paper, or scissors into the box!";
+        youpicked.innerHTML= "Not sure how you did this or how you got here but you should probably tell me about this";
 }
 function makecomputergo(){
-  let picked = activatepick();
+let picked = activatepick();
   if (picked <=0.34) {
     computer = "rock";
     computeranswer.innerHTML= "rock";

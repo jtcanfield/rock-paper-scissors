@@ -6,6 +6,8 @@ html{
   height: 50px;
   display: inline-block;
   background-size: cover;
+  transition: all 0.4s;
+  margin: 0px 10px;
 }
 #playerpicture{
   background-image: url('');
@@ -21,4 +23,10 @@ html{
 }
 .ScissorsButton{
   background-image: url('img/scissors.png');
+}
+.RockButton:hover, .PaperButton:hover, .ScissorsButton:hover {
+  transform: scale(1.2);
+}
+.RockButton:active, .PaperButton:active, .ScissorsButton:active {
+  transform: scale(1.4);
 }

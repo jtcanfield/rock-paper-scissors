@@ -58,12 +58,13 @@ if (forcepaper >0.8){
   let pick = Math.random();
   return pick
 }}
+/* You don't actually need these to do inner.HTML
 let computeranswer = document.getElementById("computeranswer");
+document.getElementById("youpicked");*/
 //CANNOT USE === ON NUMBERS
 /* If you wanted to use text:
 let playeru = document.getElementById("playertext").value;
 let player = playeru.toLowerCase();*/
-document.getElementById("youpicked");
 switch (player) {
     case "rock":
 			  me = "rock";

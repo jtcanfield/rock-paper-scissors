@@ -22,7 +22,6 @@ $(".ScissorsButton").click(function() {
   startgame("scissors");
 });
 function startgame(player){
-  console.log(player);
 function countInArray(array, what) {
     let count = 0;
     for (let i = 0; i < array.length; i++) {
@@ -37,14 +36,12 @@ if (list.length >= 10){
   list.shift(0);
   //CHECK OUT .SHIFT(), .UPSHIFT(), .POP(), .SLICE()
 }
-console.log(list);
 let listr = countInArray(list, "rock");
 let listp = countInArray(list, "paper");
 let lists = countInArray(list, "scissors");
 let forcepaper = (listr/total);
 let forcescissors = (listp/total);
 let forcesrock = (lists/total);
-console.log(forcepaper);
 function activatepick(){
 if (forcepaper >0.8){
   let pick = (Math.random() * ((0.67-0.34)+0) + 0.34);

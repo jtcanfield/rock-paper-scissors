@@ -45,13 +45,13 @@ let forcepaper = (listr/total);
 let forcescissors = (listp/total);
 let forcesrock = (lists/total);
 function activatepick(){
-if (forcepaper >0.8){
+if (forcepaper >0.7){
   let pick = (Math.random() * ((0.67-0.34)+0) + 0.34);
   return pick
-} else if (forcescissors >0.8){
+} else if (forcescissors >0.7){
   let pick = (Math.random() * ((1-0.67)+0) + 0.67);
   return pick
-} else if (forcesrock >0.8){
+} else if (forcesrock >0.7){
   let pick = (Math.random() * ((0.34-0)+0) + 0);
   return pick
 } else {

@@ -63,3 +63,8 @@ html {
   -ms-transform: scale(1.4);
   transform: scale(1.4);
 }
+#computerStats{
+  display: flex;
+  justify-content: space-around;
+  padding: 0% 20%;
+}

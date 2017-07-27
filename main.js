@@ -8,9 +8,9 @@ $(document).ready(function(){
   let playerrock = 0;
   let playerpaper = 0;
   let playerscissors = 0;
-  let computerrock = 0;
-  let computerpaper = 0;
-  let computerscissors = 0;
+  let computer1rock = 0;
+  let computer1paper = 0;
+  let computer1scissors = 0;
   let list = [];
   let computer = "";
   let computer2 = "";
@@ -81,25 +81,6 @@ switch (player) {
     default:
         youpicked.innerHTML= "Not sure how you did this or how you got here but good job! BUT you didn't win.";
 }
-function makecomputer1go(){
-  let picked = activatepick();
-    if (picked <=0.34) {
-      computer = "rock";
-      computeranswer.innerHTML= "Rock";
-      document.getElementById("computerpicture").style.backgroundImage = "url('img/rock.png')";
-      computerrock = computerrock + 1;
-    } else if (picked <=0.67) {
-    	computer = "paper";
-    	computeranswer.innerHTML= "Paper";
-      document.getElementById("computerpicture").style.backgroundImage = "url('img/paper.png')";
-      computerpaper = computerpaper + 1;
-    } else {
-      computer = "scissors";
-    	computeranswer.innerHTML= "Scissors";
-      document.getElementById("computerpicture").style.backgroundImage = "url('img/scissors.png')";
-      computerscissors = computerscissors + 1;
-    }
-  }
 function activatepick(){
   if (forcepaper >0.7){
     let pick = (Math.random() * ((0.67-0.34)+0) + 0.34);
@@ -115,6 +96,25 @@ function activatepick(){
     return pick
   }
 }
+function makecomputer1go(){
+  let picked = activatepick();
+    if (picked <=0.34) {
+      computer = "rock";
+      computeranswer.innerHTML= "Rock";
+      document.getElementById("computerpicture").style.backgroundImage = "url('img/rock.png')";
+      computer1rock = computer1rock + 1;
+    } else if (picked <=0.67) {
+    	computer = "paper";
+    	computeranswer.innerHTML= "Paper";
+      document.getElementById("computerpicture").style.backgroundImage = "url('img/paper.png')";
+      computer1paper = computer1paper + 1;
+    } else {
+      computer = "scissors";
+    	computeranswer.innerHTML= "Scissors";
+      document.getElementById("computerpicture").style.backgroundImage = "url('img/scissors.png')";
+      computer1scissors = computer1scissors + 1;
+    }
+  }
 
 
 if (player === computer){
@@ -142,12 +142,12 @@ ppapers.innerHTML= playerpaper;
 ppaperspercentage.innerHTML= Math.round(playerpaper/turns*100);
 pscissors.innerHTML= playerscissors;
 pscissorspercentage.innerHTML= Math.round(playerscissors/turns*100);
-crocks.innerHTML= computerrock;
-crockspercentage.innerHTML= Math.round(computerrock/turns*100);
-cpapers.innerHTML= computerpaper;
-cpaperspercentage.innerHTML= Math.round(computerpaper/turns*100);
-cscissors.innerHTML= computerscissors;
-cscissorspercentage.innerHTML= Math.round(computerscissors/turns*100);
+c1rocks.innerHTML= computer1rock;
+c1rockspercentage.innerHTML= Math.round(computer1rock/turns*100);
+c1papers.innerHTML= computer1paper;
+c1paperspercentage.innerHTML= Math.round(computer1paper/turns*100);
+c1scissors.innerHTML= computer1scissors;
+c1scissorspercentage.innerHTML= Math.round(computer1scissors/turns*100);
 };
 });
 /* BELOW IS A SIMPLIFIED FUNCTION FOR DETERMINING WHO WINS

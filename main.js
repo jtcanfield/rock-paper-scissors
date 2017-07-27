@@ -100,9 +100,10 @@ pscissorspercentage.innerHTML= Math.round(playerscissors/turns*100);
 function startComputers(computerPlayers){
   // makecomputer1go();
   for (let i = 0; i < Number($('input[name=number_of_computers]:checked').val()); i++){
-    console.log(computerPlayers);
-    console.log(i);
-    makecomputer1go();
+    console.log("Begin Log");
+    console.log("computerPlayers = " + computerPlayers);
+    console.log("i = " + i);
+    makecomputer1go(i + 1);
 function activatepick(){
   if (forcepaper >0.7){
     let pick = (Math.random() * ((0.67-0.34)+0) + 0.34);
@@ -118,26 +119,28 @@ function activatepick(){
     return pick
   }
 }
-function makecomputer1go(){
+function makecomputer1go(v){
+  // console.log("makecomputer1go(v) = " + v);
   let picked = activatepick();
+  console.log("computer"+v+"picture");
     if (picked <=0.34) {
       computer = "rock";
-      computeranswer.innerHTML= "Rock";
-      document.getElementById("computerpicture").style.backgroundImage = "url('img/rock.png')";
+      $("#computer"+v+"answer").html(computer);
+      document.getElementById("computer"+v+"picture").style.backgroundImage = "url('img/rock.png')";
       computer1rock = computer1rock + 1;
     } else if (picked <=0.67) {
     	computer = "paper";
-    	computeranswer.innerHTML= "Paper";
-      document.getElementById("computerpicture").style.backgroundImage = "url('img/paper.png')";
+    	$("#computer"+v+"answer").html(computer);
+      document.getElementById("computer"+v+"picture").style.backgroundImage = "url('img/paper.png')";
       computer1paper = computer1paper + 1;
     } else {
       computer = "scissors";
-    	computeranswer.innerHTML= "Scissors";
-      document.getElementById("computerpicture").style.backgroundImage = "url('img/scissors.png')";
+    	$("#computer"+v+"answer").html(computer);
+      document.getElementById("computer"+v+"picture").style.backgroundImage = "url('img/scissors.png')";
       computer1scissors = computer1scissors + 1;
     }
+    return
   }
-
 
 if (player === computer){
   answer.innerHTML = "Tie!";

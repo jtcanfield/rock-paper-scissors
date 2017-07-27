@@ -141,14 +141,20 @@ function makecomputergo(){
     }
   }
 function activatepick(){
-  if (forcepaper >0.7){
-    let pick = (Math.random() * ((0.67-0.34)+0) + 0.34);
+  if (forcerock >0.7){
+    let pick = (Math.random() * ((0.2-0)+0) + 0);
+    return pick
+  } else if (forcepaper >0.7){
+    let pick = (Math.random() * ((0.4-0.2)+0) + 0.2);
     return pick
   } else if (forcescissors >0.7){
-    let pick = (Math.random() * ((1-0.67)+0) + 0.67);
+    let pick = (Math.random() * ((0.6-0.4)+0) + 0.4);
     return pick
-  } else if (forcerock >0.7){
-    let pick = (Math.random() * ((0.34-0)+0) + 0);
+  } else if (forcespock >0.7){
+    let pick = (Math.random() * ((0.8-0.6)+0) + 0.6);
+    return pick
+  } else if (forcelizard >0.7){
+    let pick = (Math.random() * ((1-0.8)+0) + 0.8);
     return pick
   } else {
     let pick = Math.random();

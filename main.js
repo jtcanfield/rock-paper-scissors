@@ -8,12 +8,15 @@ $(document).ready(function(){
   let playerrock = 0;
   let playerpaper = 0;
   let playerscissors = 0;
+  let computer1turns = 0;
   let computer1rock = 0;
   let computer1paper = 0;
   let computer1scissors = 0;
+  let computer2turns = 0;
   let computer2rock = 0;
   let computer2paper = 0;
   let computer2scissors = 0;
+  let computer3turns = 0;
   let computer3rock = 0;
   let computer3paper = 0;
   let computer3scissors = 0;
@@ -141,17 +144,32 @@ function makecomputergo(v){
       if (v === 3){
         computer3rock = computer3rock + 1;
       }
-      // computer1rock = computer1rock + 1;
     } else if (picked <=0.67) {
     	computer = "paper";
     	$("#computer"+v+"answer").html(computer);
       document.getElementById("computer"+v+"picture").style.backgroundImage = "url('img/paper.png')";
-      computer1paper = computer1paper + 1;
+      if (v === 1){
+        computer1paper = computer1paper + 1;
+      }
+      if (v === 2){
+        computer2paper = computer2paper + 1;
+      }
+      if (v === 3){
+        computer3paper = computer3paper + 1;
+      }
     } else {
       computer = "scissors";
     	$("#computer"+v+"answer").html(computer);
       document.getElementById("computer"+v+"picture").style.backgroundImage = "url('img/scissors.png')";
-      computer1scissors = computer1scissors + 1;
+      if (v === 1){
+        computer1scissors = computer1scissors + 1;
+      }
+      if (v === 2){
+        computer2scissors = computer2scissors + 1;
+      }
+      if (v === 3){
+        computer3scissors = computer3scissors + 1;
+      }
     }
 
 
@@ -170,15 +188,21 @@ if (player == "rock" && computer == "scissors" || player == "paper" && computer 
 $("#c1rocks").html(computer1rock);
 $("#c2rocks").html(computer2rock);
 $("#c3rocks").html(computer3rock);
-$("#c1rockspercentage").html(Math.round(computer1rock/turns*100));
+$("#c1rockspercentage").html(Math.round(computer1rock/computer1turns*100));
+$("#c2rockspercentage").html(Math.round(computer2rock/computer2turns*100));
+$("#c3rockspercentage").html(Math.round(computer3rock/computer3turns*100));
 $("#c1papers").html(computer1paper);
 $("#c2papers").html(computer2paper);
 $("#c3papers").html(computer3paper);
-$("#c1paperspercentage").html(Math.round(computer1paper/turns*100));
+$("#c1paperspercentage").html(Math.round(computer1paper/computer1turns*100));
+$("#c2paperspercentage").html(Math.round(computer2paper/computer2turns*100));
+$("#c3paperspercentage").html(Math.round(computer3paper/computer3turns*100));
 $("#c1scissors").html(computer1scissors);
 $("#c2scissors").html(computer2scissors);
 $("#c3scissors").html(computer3scissors);
-$("#c1scissorspercentage").html(Math.round(computer1scissors/turns*100));
+$("#c1scissorspercentage").html(Math.round(computer1scissors/computer1turns*100));
+$("#c2scissorspercentage").html(Math.round(computer2scissors/computer2turns*100));
+$("#c3scissorspercentage").html(Math.round(computer3scissors/computer3turns*100));
 };
 };
 };

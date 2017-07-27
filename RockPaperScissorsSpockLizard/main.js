@@ -46,11 +46,15 @@ function countInArray(array, what) {
 }
 let listr = countInArray(list, "rock");
 let listp = countInArray(list, "paper");
-let lists = countInArray(list, "scissors");
+let listsc = countInArray(list, "scissors");
+let lists = countInArray(list, "spock");
+let listl = countInArray(list, "lizard");
 let total = list.length
 let forcepaper = (listr/total);
 let forcescissors = (listp/total);
-let forcesrock = (lists/total);
+let forcerock = (listl/total);
+let forcelizard = (lists/total);
+let forcespock = (listsc/total);
 /* You don't actually need these to do inner.HTML
 let computeranswer = document.getElementById("computeranswer");
 document.getElementById("youpicked");*/
@@ -109,21 +113,31 @@ switch (player) {
 }
 function makecomputergo(){
   let picked = activatepick();
-    if (picked <=0.34) {
+    if (picked <=0.2) {
       computer = "rock";
       computeranswer.innerHTML= "Rock";
       document.getElementById("computerpicture").style.backgroundImage = "url('img/rock.png')";
       computerrock = computerrock + 1;
-    } else if (picked <=0.67) {
+    } else if (picked <=0.4) {
     	computer = "paper";
     	computeranswer.innerHTML= "Paper";
       document.getElementById("computerpicture").style.backgroundImage = "url('img/paper.png')";
       computerpaper = computerpaper + 1;
-    } else {
+    } else if (picked <=0.6) {
       computer = "scissors";
     	computeranswer.innerHTML= "Scissors";
       document.getElementById("computerpicture").style.backgroundImage = "url('img/scissors.png')";
       computerscissors = computerscissors + 1;
+    } else if (picked <=0.8) {
+      computer = "spock";
+    	computeranswer.innerHTML= "Spock";
+      document.getElementById("computerpicture").style.backgroundImage = "url('img/spock.jpg')";
+      computerspock = computerspock + 1;
+    } else {
+      computer = "lizard";
+    	computeranswer.innerHTML= "Lizard";
+      document.getElementById("computerpicture").style.backgroundImage = "url('img/scissors.png')";
+      computerlizard = computerlizard + 1;
     }
   }
 function activatepick(){
@@ -133,7 +147,7 @@ function activatepick(){
   } else if (forcescissors >0.7){
     let pick = (Math.random() * ((1-0.67)+0) + 0.67);
     return pick
-  } else if (forcesrock >0.7){
+  } else if (forcerock >0.7){
     let pick = (Math.random() * ((0.34-0)+0) + 0);
     return pick
   } else {
@@ -166,12 +180,20 @@ ppapers.innerHTML= playerpaper;
 ppaperspercentage.innerHTML= Math.round(playerpaper/turns*100);
 pscissors.innerHTML= playerscissors;
 pscissorspercentage.innerHTML= Math.round(playerscissors/turns*100);
+pspock.innerHTML= playerspock;
+pspockpercentage.innerHTML= Math.round(playerspock/turns*100);
+plizard.innerHTML= playerlizard;
+plizardpercentage.innerHTML= Math.round(playerlizard/turns*100);
 crocks.innerHTML= computerrock;
 crockspercentage.innerHTML= Math.round(computerrock/turns*100);
 cpapers.innerHTML= computerpaper;
 cpaperspercentage.innerHTML= Math.round(computerpaper/turns*100);
 cscissors.innerHTML= computerscissors;
 cscissorspercentage.innerHTML= Math.round(computerscissors/turns*100);
+cspock.innerHTML= computerspock;
+cspockpercentage.innerHTML= Math.round(computerspock/turns*100);
+clizard.innerHTML= computerlizard;
+clizardpercentage.innerHTML= Math.round(computerlizard/turns*100);
 };
 });
 /* BELOW IS A SIMPLIFIED FUNCTION FOR DETERMINING WHO WINS

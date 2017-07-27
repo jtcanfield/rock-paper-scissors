@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html class="thehtmlclass">
+    <head>
+      <link href="styles.css" type="text/css" rel="stylesheet">
+      <title>Rock, Paper, and Scissors</title>
+    </head>
+    <body class="bodybackground">
+      <h1>Lets play Rock, Paper, Scissors!</h1>
+      <p>Click a button and start playing!</p>
+      <p>Don't pick the same option too many times, or else the computer will figure that out!</p>
+      <button class="RockButton">Rock</button><button class="PaperButton">Paper</button><button class="ScissorsButton">Scissors</button>
+      <!-- <input type="text" id="player"/> -->
+      <br>
+      <p>You Picked: <span id="youpicked"></span></p>
+      <div id="playerpicture"></div>
+      <p>Computer Picked: <span id="computeranswer"></span></p>
+      <div id="computerpicture"></div>
+      <p><span id="answer"></span></p>
+      <p>Plays:<span id="plays"></span>
+        <br>Wins:<span id="wins"></span>(<span id="winspercentage"></span>%)
+        <br>Losses:<span id="losses"></span>(<span id="lossespercentage"></span>%)
+        <br>Ties:<span id="ties"></span>(<span id="tiespercentage"></span>%)
+      </p><hr>
+      <p>Player Stats:
+        <br>Rock:<span id="procks"></span>(<span id="prockspercentage"></span>%)
+        <br>Paper:<span id="ppapers"></span>(<span id="ppaperspercentage"></span>%)
+        <br>Scissors:<span id="pscissors"></span>(<span id="pscissorspercentage"></span>%)
+      </p><hr>
+      <p>Computer Stats:
+        <br>Rock:<span id="crocks"></span>(<span id="crockspercentage"></span>%)
+        <br>Paper:<span id="cpapers"></span>(<span id="cpaperspercentage"></span>%)
+        <br>Scissors:<span id="cscissors"></span>(<span id="cscissorspercentage"></span>%)
+      </p>
+      <script src='https://code.jquery.com/jquery-3.1.0.min.js'></script>
+    </body>
+  <script src="main.js"></script>
+</html>

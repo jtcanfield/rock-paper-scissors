@@ -187,6 +187,7 @@ function startgame(player){
           win = win + 1;
         }
         //There is a way to do multiple variations on variable names, possible using object.key value pairs
+        //Give below ID's, turn into class, add array, and classes and arrays can interact
         $("#c1rocks").html(computer1rock);
         $("#c2rocks").html(computer2rock);
         $("#c3rocks").html(computer3rock);

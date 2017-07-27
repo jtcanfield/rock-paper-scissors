@@ -15,6 +15,7 @@ $(document).ready(function(){
   let computer = "";
   let computer2 = "";
   let me = "";
+  // $("input[type='radio']").change(function() {   });
 $(".RockButton").click(function() {
   startgame("rock");
 });
@@ -38,7 +39,6 @@ function countInArray(array, what) {
 let listr = countInArray(list, "rock");
 let listp = countInArray(list, "paper");
 let lists = countInArray(list, "scissors");
-console.log(listr);
 let total = list.length
 let forcepaper = (listr/total);
 let forcescissors = (listp/total);
@@ -58,7 +58,8 @@ switch (player) {
         list.push("rock");
         turns = turns + 1;
         playerrock = playerrock + 1;
-        makecomputer1go();
+        startComputers(Number($('input[name=number_of_computers]:checked').val()));
+        // makecomputer1go();
         break;
     case "paper":
 			  me = "paper";
@@ -67,7 +68,8 @@ switch (player) {
         list.push("paper");
         turns = turns + 1;
         playerpaper = playerpaper + 1;
-        makecomputer1go();
+        startComputers(Number($('input[name=number_of_computers]:checked').val()));
+        // makecomputer1go();
         break;
     case "scissors":
 			  me = "scissors";
@@ -76,11 +78,31 @@ switch (player) {
         list.push("scissors");
         turns = turns + 1;
         playerscissors = playerscissors + 1;
-        makecomputer1go();
+        startComputers(Number($('input[name=number_of_computers]:checked').val()));
+        // makecomputer1go();
         break;
     default:
         youpicked.innerHTML= "Not sure how you did this or how you got here but good job! BUT you didn't win.";
 }
+plays.innerHTML= turns;
+wins.innerHTML= win;
+winspercentage.innerHTML= Math.round(win/turns*100);
+losses.innerHTML= loss;
+lossespercentage.innerHTML= Math.round(loss/turns*100);
+ties.innerHTML= tie;
+tiespercentage.innerHTML= Math.round(tie/turns*100);
+procks.innerHTML= playerrock;
+prockspercentage.innerHTML= Math.round(playerrock/turns*100);
+ppapers.innerHTML= playerpaper;
+ppaperspercentage.innerHTML= Math.round(playerpaper/turns*100);
+pscissors.innerHTML= playerscissors;
+pscissorspercentage.innerHTML= Math.round(playerscissors/turns*100);
+function startComputers(computerPlayers){
+  // makecomputer1go();
+  for (let i = 0; i < Number($('input[name=number_of_computers]:checked').val()); i++){
+    console.log(computerPlayers);
+    console.log(i);
+    makecomputer1go();
 function activatepick(){
   if (forcepaper >0.7){
     let pick = (Math.random() * ((0.67-0.34)+0) + 0.34);
@@ -129,25 +151,14 @@ if (player == "rock" && computer == "scissors" || player == "paper" && computer 
   answer.innerHTML = "You Win!";
   win = win + 1;
 }
-plays.innerHTML= turns;
-wins.innerHTML= win;
-winspercentage.innerHTML= Math.round(win/turns*100);
-losses.innerHTML= loss;
-lossespercentage.innerHTML= Math.round(loss/turns*100);
-ties.innerHTML= tie;
-tiespercentage.innerHTML= Math.round(tie/turns*100);
-procks.innerHTML= playerrock;
-prockspercentage.innerHTML= Math.round(playerrock/turns*100);
-ppapers.innerHTML= playerpaper;
-ppaperspercentage.innerHTML= Math.round(playerpaper/turns*100);
-pscissors.innerHTML= playerscissors;
-pscissorspercentage.innerHTML= Math.round(playerscissors/turns*100);
 c1rocks.innerHTML= computer1rock;
 c1rockspercentage.innerHTML= Math.round(computer1rock/turns*100);
 c1papers.innerHTML= computer1paper;
 c1paperspercentage.innerHTML= Math.round(computer1paper/turns*100);
 c1scissors.innerHTML= computer1scissors;
 c1scissorspercentage.innerHTML= Math.round(computer1scissors/turns*100);
+};
+};
 };
 });
 /* BELOW IS A SIMPLIFIED FUNCTION FOR DETERMINING WHO WINS

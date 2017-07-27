@@ -100,17 +100,13 @@ lossespercentage.innerHTML= Math.round(loss/turns*100);
 ties.innerHTML= tie;
 tiespercentage.innerHTML= Math.round(tie/turns*100);
 procks.innerHTML= playerrock;
-prockspercentage.innerHTML= Math.round(playerrock/turns*100);
+prockspercentage.innerHTML= Math.round(playerrock/computer1turns*100);
 ppapers.innerHTML= playerpaper;
-ppaperspercentage.innerHTML= Math.round(playerpaper/turns*100);
+ppaperspercentage.innerHTML= Math.round(playerpaper/computer1turns*100);
 pscissors.innerHTML= playerscissors;
-pscissorspercentage.innerHTML= Math.round(playerscissors/turns*100);
+pscissorspercentage.innerHTML= Math.round(playerscissors/computer1turns*100);
 function startComputers(computerPlayers){
-  // makecomputer1go();
   for (let i = 0; i < Number($('input[name=number_of_computers]:checked').val()); i++){
-    console.log("Begin Log");
-    console.log("computerPlayers = " + computerPlayers);
-    console.log("i = " + i);
     makecomputergo(i + 1);
 function activatepick(){
   if (forcepaper >0.7){
@@ -128,21 +124,22 @@ function activatepick(){
   }
 }
 function makecomputergo(v){
-  // console.log("makecomputer1go(v) = " + v);
   let picked = activatepick();
     if (picked <=0.34) {
       computer = "rock";
       $("#computer"+v+"answer").html(computer);
       document.getElementById("computer"+v+"picture").style.backgroundImage = "url('img/rock.png')";
-      console.log(v);
       if (v === 1){
         computer1rock = computer1rock + 1;
+        computer1turns = computer1turns + 1;
       }
       if (v === 2){
         computer2rock = computer2rock + 1;
+        computer2turns = computer2turns + 1;
       }
       if (v === 3){
         computer3rock = computer3rock + 1;
+        computer3turns = computer3turns + 1;
       }
     } else if (picked <=0.67) {
     	computer = "paper";
@@ -150,12 +147,15 @@ function makecomputergo(v){
       document.getElementById("computer"+v+"picture").style.backgroundImage = "url('img/paper.png')";
       if (v === 1){
         computer1paper = computer1paper + 1;
+        computer1turns = computer1turns + 1;
       }
       if (v === 2){
         computer2paper = computer2paper + 1;
+        computer2turns = computer2turns + 1;
       }
       if (v === 3){
         computer3paper = computer3paper + 1;
+        computer3turns = computer3turns + 1;
       }
     } else {
       computer = "scissors";
@@ -163,12 +163,15 @@ function makecomputergo(v){
       document.getElementById("computer"+v+"picture").style.backgroundImage = "url('img/scissors.png')";
       if (v === 1){
         computer1scissors = computer1scissors + 1;
+        computer1turns = computer1turns + 1;
       }
       if (v === 2){
         computer2scissors = computer2scissors + 1;
+        computer2turns = computer2turns + 1;
       }
       if (v === 3){
         computer3scissors = computer3scissors + 1;
+        computer3turns = computer3turns + 1;
       }
     }
 

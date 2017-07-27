@@ -13,6 +13,7 @@ $(document).ready(function(){
   let computerscissors = 0;
   let list = [];
   let computer = "";
+  let computer2 = "";
   let me = "";
 $(".RockButton").click(function() {
   startgame("rock");
@@ -37,6 +38,7 @@ function countInArray(array, what) {
 let listr = countInArray(list, "rock");
 let listp = countInArray(list, "paper");
 let lists = countInArray(list, "scissors");
+console.log(listr);
 let total = list.length
 let forcepaper = (listr/total);
 let forcescissors = (listp/total);
@@ -52,34 +54,34 @@ switch (player) {
     case "rock":
 			  me = "rock";
         youpicked.innerHTML= "Rock";
-        turns = turns + 1;
         document.getElementById("playerpicture").style.backgroundImage = "url('img/rock.png')";
-        makecomputergo();
         list.push("rock");
+        turns = turns + 1;
         playerrock = playerrock + 1;
+        makecomputer1go();
         break;
     case "paper":
 			  me = "paper";
         youpicked.innerHTML= "Paper";
-        turns = turns + 1;
         document.getElementById("playerpicture").style.backgroundImage = "url('img/paper.png')";
-        makecomputergo();
         list.push("paper");
+        turns = turns + 1;
         playerpaper = playerpaper + 1;
+        makecomputer1go();
         break;
     case "scissors":
 			  me = "scissors";
         youpicked.innerHTML= "Scissors";
-        turns = turns + 1;
         document.getElementById("playerpicture").style.backgroundImage = "url('img/scissors.png')";
-        makecomputergo();
         list.push("scissors");
+        turns = turns + 1;
         playerscissors = playerscissors + 1;
+        makecomputer1go();
         break;
     default:
         youpicked.innerHTML= "Not sure how you did this or how you got here but good job! BUT you didn't win.";
 }
-function makecomputergo(){
+function makecomputer1go(){
   let picked = activatepick();
     if (picked <=0.34) {
       computer = "rock";
@@ -113,6 +115,8 @@ function activatepick(){
     return pick
   }
 }
+
+
 if (player === computer){
   answer.innerHTML = "Tie!";
   tie = tie + 1;

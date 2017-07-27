@@ -56,7 +56,7 @@ switch (player) {
         youpicked.innerHTML= "Rock";
         document.getElementById("playerpicture").style.backgroundImage = "url('img/rock.png')";
         list.push("rock");
-        turns = turns + 1;
+        turns = turns + Number($('input[name=number_of_computers]:checked').val());
         playerrock = playerrock + 1;
         startComputers(Number($('input[name=number_of_computers]:checked').val()));
         // makecomputer1go();
@@ -66,7 +66,7 @@ switch (player) {
         youpicked.innerHTML= "Paper";
         document.getElementById("playerpicture").style.backgroundImage = "url('img/paper.png')";
         list.push("paper");
-        turns = turns + 1;
+        turns = turns + Number($('input[name=number_of_computers]:checked').val());
         playerpaper = playerpaper + 1;
         startComputers(Number($('input[name=number_of_computers]:checked').val()));
         // makecomputer1go();
@@ -76,7 +76,7 @@ switch (player) {
         youpicked.innerHTML= "Scissors";
         document.getElementById("playerpicture").style.backgroundImage = "url('img/scissors.png')";
         list.push("scissors");
-        turns = turns + 1;
+        turns = turns + Number($('input[name=number_of_computers]:checked').val());
         playerscissors = playerscissors + 1;
         startComputers(Number($('input[name=number_of_computers]:checked').val()));
         // makecomputer1go();
@@ -103,7 +103,7 @@ function startComputers(computerPlayers){
     console.log("Begin Log");
     console.log("computerPlayers = " + computerPlayers);
     console.log("i = " + i);
-    makecomputer1go(i + 1);
+    makecomputergo(i + 1);
 function activatepick(){
   if (forcepaper >0.7){
     let pick = (Math.random() * ((0.67-0.34)+0) + 0.34);
@@ -119,7 +119,7 @@ function activatepick(){
     return pick
   }
 }
-function makecomputer1go(v){
+function makecomputergo(v){
   // console.log("makecomputer1go(v) = " + v);
   let picked = activatepick();
   console.log("computer"+v+"picture");
@@ -139,27 +139,33 @@ function makecomputer1go(v){
       document.getElementById("computer"+v+"picture").style.backgroundImage = "url('img/scissors.png')";
       computer1scissors = computer1scissors + 1;
     }
-    return
-  }
+
 
 if (player === computer){
-  answer.innerHTML = "Tie!";
+  $("#answer"+v).html("Tie!");
   tie = tie + 1;
 }
 if (player == "rock" && computer == "paper" || player == "paper" && computer == "scissors" || player == "scissors" && computer == "rock") {
-  answer.innerHTML = "You Lose!";
+  $("#answer"+v).html("You Lose!");
   loss = loss + 1;
 }
 if (player == "rock" && computer == "scissors" || player == "paper" && computer == "rock" || player == "scissors" && computer == "paper") {
-  answer.innerHTML = "You Win!";
+  $("#answer"+v).html("You Win!!");
   win = win + 1;
 }
-c1rocks.innerHTML= computer1rock;
-c1rockspercentage.innerHTML= Math.round(computer1rock/turns*100);
-c1papers.innerHTML= computer1paper;
-c1paperspercentage.innerHTML= Math.round(computer1paper/turns*100);
-c1scissors.innerHTML= computer1scissors;
-c1scissorspercentage.innerHTML= Math.round(computer1scissors/turns*100);
+$("#c"+v+"rocks").html(computer1rock);
+// c1rocks.innerHTML= computer1rock;
+$("#c"+v+"rockspercentage").html(Math.round(computer1rock/turns*100));
+// c1rockspercentage.innerHTML= Math.round(computer1rock/turns*100);
+$("#c"+v+"papers").html(computer1paper);
+// c1papers.innerHTML= computer1paper;
+$("#c"+v+"paperspercentage").html(Math.round(computer1paper/turns*100));
+// c1paperspercentage.innerHTML= Math.round(computer1paper/turns*100);
+$("#c"+v+"scissors").html(computer1scissors);
+// c1scissors.innerHTML= computer1scissors;
+$("#c"+v+"scissorspercentage").html(Math.round(computer1scissors/turns*100));
+// c1scissorspercentage.innerHTML= Math.round(computer1scissors/turns*100);
+};
 };
 };
 };

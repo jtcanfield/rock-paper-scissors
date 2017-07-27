@@ -136,7 +136,7 @@ function makecomputergo(){
     } else {
       computer = "lizard";
     	computeranswer.innerHTML= "Lizard";
-      document.getElementById("computerpicture").style.backgroundImage = "url('img/scissors.png')";
+      document.getElementById("computerpicture").style.backgroundImage = "url('img/lizard.jpg')";
       computerlizard = computerlizard + 1;
     }
   }
@@ -220,29 +220,3 @@ clizard.innerHTML= computerlizard;
 clizardpercentage.innerHTML= Math.round(computerlizard/turns*100);
 };
 });
-/* BELOW IS A SIMPLIFIED FUNCTION FOR DETERMINING WHO WINS
-function rps (player, computer) {
-  if (player === computer){
-    return "Tie"
-  }
-  if (player == 'rock' && computer == 'scissors'){
-    return "Player Wins"
-  } else if (player == 'rock'){
-    return 'Computer Wins'
-  }
-  if (player == 'paper' && computer == 'rock'){
-    return "Player Wins"
-  } else if (player == 'paper'){
-    return 'Computer Wins'
-  }
-  if (player == 'scissors' && computer == 'paper'){
-    return "Player Wins"
-  } else if (player == 'scissors'){
-    return 'Computer Wins'
-  }
-}
-console.log(rps('rock', 'paper'));
-console.log(rps('scissors', 'paper'));
-console.log(rps('scissors', 'rock'));
-console.log(rps('rock', 'rock'));
-*/

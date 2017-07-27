@@ -22,7 +22,7 @@ html {
   filter: blur(10px);
 }
 
-.RockButton, .PaperButton, .ScissorsButton, #playerpicture, #computerpicture{
+.RockButton, .PaperButton, .ScissorsButton, .SpockButton, .LizardButton, #playerpicture, #computerpicture{
   width: 50px;
   height: 50px;
   display: inline-block;
@@ -49,14 +49,20 @@ html {
 .ScissorsButton{
   background-image: url('img/scissors.png');
 }
-.RockButton:hover, .PaperButton:hover, .ScissorsButton:hover {
+.SpockButton{
+  background-image: url('img/spock.jpg');
+}
+.LizardButton{
+  background-image: url('img/lizard.jpg');
+}
+.RockButton:hover, .PaperButton:hover, .ScissorsButton:hover, .SpockButton:hover, .LizardButton:hover {
   -webkit-transform: scale(1.2);
   -moz-transform: scale(1.2);
   -o-transform: scale(1.2);
   -ms-transform: scale(1.2);
   transform: scale(1.2);
 }
-.RockButton:active, .PaperButton:active, .ScissorsButton:active {
+.RockButton:active, .PaperButton:active, .ScissorsButton:active, .SpockButton:active, .LizardButton:active {
   -webkit-transform: scale(1.4);
   -moz-transform: scale(1.4);
   -o-transform: scale(1.4);

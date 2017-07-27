@@ -8,9 +8,13 @@ $(document).ready(function(){
   let playerrock = 0;
   let playerpaper = 0;
   let playerscissors = 0;
+  let playerspock = 0;
+  let playerlizard =0;
   let computerrock = 0;
   let computerpaper = 0;
   let computerscissors = 0;
+  let computerspock = 0;
+  let computerlizard = 0;
   let list = [];
   let computer = "";
   let me = "";
@@ -22,6 +26,12 @@ $(".PaperButton").click(function() {
 });
 $(".ScissorsButton").click(function() {
   startgame("scissors");
+});
+$(".SpockButton").click(function() {
+  startgame("spock");
+});
+$(".LizardButton").click(function() {
+  startgame("lizard");
 });
 function startgame(player){
 if (list.length >= 10){ list.shift(0); }
@@ -75,6 +85,24 @@ switch (player) {
         makecomputergo();
         list.push("scissors");
         playerscissors = playerscissors + 1;
+        break;
+    case "spock":
+			  me = "spock";
+        youpicked.innerHTML= "Spock";
+        turns = turns + 1;
+        document.getElementById("playerpicture").style.backgroundImage = "url('img/spock.jpg')";
+        makecomputergo();
+        list.push("spock");
+        playerspock = playerspock + 1;
+        break;
+    case "lizard":
+        me = "lizard";
+        youpicked.innerHTML= "Lizard";
+        turns = turns + 1;
+        document.getElementById("playerpicture").style.backgroundImage = "url('img/lizard.jpg')";
+        makecomputergo();
+        list.push("lizard");
+        playerlizard = playerlizard + 1;
         break;
     default:
         youpicked.innerHTML= "Not sure how you did this or how you got here but good job! BUT you didn't win.";

@@ -159,11 +159,29 @@ if (player === computer){
   answer.innerHTML = "Tie!";
   tie = tie + 1;
 }
-if (player == "rock" && computer == "paper" || player == "paper" && computer == "scissors" || player == "scissors" && computer == "rock") {
+if (player == "rock" && computer == "paper" ||
+    player == "rock" && computer == "spock" ||
+    player == "paper" && computer == "scissors" ||
+    player == "paper" && computer == "lizard" ||
+    player == "scissors" && computer == "rock" ||
+    player == "scissors" && computer == "spock" ||
+    player == "spock" && computer == "paper" ||
+    player == "spock" && computer == "lizard" ||
+    player == "lizard" && computer == "rock" ||
+    player == "lizard" && computer == "scissors") {
   answer.innerHTML = "You Lose!";
   loss = loss + 1;
 }
-if (player == "rock" && computer == "scissors" || player == "paper" && computer == "rock" || player == "scissors" && computer == "paper") {
+if (computer == "rock" && player == "paper" ||
+    computer == "rock" && player == "spock" ||
+    computer == "paper" && player == "scissors" ||
+    computer == "paper" && player == "lizard" ||
+    computer == "scissors" && player == "rock" ||
+    computer == "scissors" && player == "spock" ||
+    computer == "spock" && player == "paper" ||
+    computer == "spock" && player == "lizard" ||
+    computer == "lizard" && player == "rock" ||
+    computer == "lizard" && player == "scissors") {
   answer.innerHTML = "You Win!";
   win = win + 1;
 }

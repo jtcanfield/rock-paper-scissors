@@ -67,7 +67,6 @@ function startgame(player){
           turns = turns + Number($('input[name=number_of_computers]:checked').val());
           playerrock = playerrock + 1;
           startComputers(Number($('input[name=number_of_computers]:checked').val()));
-          // makecomputer1go();
           break;
       case "paper":
   			  me = "paper";
@@ -77,7 +76,6 @@ function startgame(player){
           turns = turns + Number($('input[name=number_of_computers]:checked').val());
           playerpaper = playerpaper + 1;
           startComputers(Number($('input[name=number_of_computers]:checked').val()));
-          // makecomputer1go();
           break;
       case "scissors":
   			  me = "scissors";
@@ -87,7 +85,6 @@ function startgame(player){
           turns = turns + Number($('input[name=number_of_computers]:checked').val());
           playerscissors = playerscissors + 1;
           startComputers(Number($('input[name=number_of_computers]:checked').val()));
-          // makecomputer1go();
           break;
       default:
           youpicked.innerHTML= "Not sure how you did this or how you got here but good job! BUT you didn't win.";
